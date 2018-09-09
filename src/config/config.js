@@ -6,6 +6,7 @@ let startingUrl
 let pages
 let filter
 let reviewSelector
+let top
 
 /**
  * app configuration
@@ -19,6 +20,7 @@ module.exports = {
     module.exports.pages = commandArguments.pages
     module.exports.filter = commandArguments.filter
     module.exports.reviewSelector = commandArguments.reviewSelector
+    module.exports.top = commandArguments.top
   },
   /**
    * Product page to scraper will start on
@@ -35,5 +37,9 @@ module.exports = {
   /**
    * CSS selector for product reviews
    */
-  reviewSelector: reviewSelector
+  reviewSelector: reviewSelector,
+  /**
+   * number of top reviews to find.
+   */
+  top: top
 }

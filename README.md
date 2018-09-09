@@ -1,11 +1,22 @@
 # Dealer Rater Review Scraper
-Discover suspiciously positive reviews on KGB dealer rater site.
+Discover overly positive reviews for KGB location on dealer rater.
 
 ## Running the app
   * Install [Node.js and npm](nodejs.org)
 (npmjs.org)
   * Install Dependencies `npm install` run from project root.
   * `npm start` to run the application
+
+## Criteria
+The KGB beleives that too many positive reviews will bring unwanted attention to their dealership. They decided that highly rated lengthy reviews classify a review as overly positive. They've constructed the following algorithm to rank overly positive reviews.
+
+`(starRating + employeeReviews) * reviewLength`
+
+variable | Description
+------------ | ------------
+starRating | how many stars the reviewer gave (decimal number 0-5)
+employeeReviews | number of employees reviewed
+reviewLength | number of characters in the review body
 
 ## Options
 Optional command line flags can be passed in to alter the application behaviour
