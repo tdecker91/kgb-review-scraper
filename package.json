@@ -1,0 +1,20 @@
+{
+  "name": "podium-backend-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.spec.js'",
+    "start": "node src/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nock": "^9.6.1"
+  },
+  "dependencies": {
+    "command-line-args": "^5.0.2"
+  }
+}
