@@ -23,12 +23,12 @@ Optional command line flags can be passed in to alter the application behaviour
 
 Example `npm start -- --pages=5`
 
-Flag | Description
------------- | ------------
-startingUrl | product page to scrape reviews from
-pages | number of pages of reviews to scrape
-filter | review list filter
-reviewSelector | CSS selector for product reviews
+Flag | Description | Default
+------------ | ------------ | ------------
+startingUrl | product page to scrape reviews from | [link](https://www.dealerrater.com/dealer/McKaig-Chevrolet-Buick-A-Dealer-For-The-People-dealer-reviews-23685/)
+pages | number of pages of reviews to scrape | 5
+filter | review list filter | ALL_REVIEWS
+reviewSelector | CSS selector for product reviews | #reviews .review-entry
 
 ## Test Suite
 All tests are located in `/test`. The folder structure should match that of `/src`. For example the scraper module is located in `/src/modules/scraper.js` and the test file is `/test/modules/scraper.spect.js`
