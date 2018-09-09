@@ -1,6 +1,6 @@
-const { assert } = require('chai');
-const scraper = require('../../src/modules/scraper');
-const nock = require('nock');
+const { assert } = require('chai')
+const scraper = require('../../src/modules/scraper')
+const nock = require('nock')
 
 const mockResponse = 'mock response'
 
@@ -11,7 +11,7 @@ describe('scraper module spec', () => {
       .get('/product/page1/?filter=ONLY_POSITIVE')
       .reply(200, mockResponse)
 
-    return scraper.scapePage('https://www.mock.com/product', 1, 'ONLY_POSITIVE')
+    return scraper.scrapePage('https://www.mock.com/product', 1, 'ONLY_POSITIVE')
       .then(response => {
         assert.isOk(response)
       })
@@ -22,7 +22,7 @@ describe('scraper module spec', () => {
       .get('/product/page1/?filter=ONLY_POSITIVE')
       .replyWithError('something bad happened')
 
-    return scraper.scapePage('https://www.mock.com/product', 1, 'ONLY_POSITIVE')
+    return scraper.scrapePage('https://www.mock.com/product', 1, 'ONLY_POSITIVE')
       .then(
         () => Promise.reject(new Error('Expected method to reject.')),
         err => assert.instanceOf(err, Error)

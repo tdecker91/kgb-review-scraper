@@ -17,6 +17,7 @@ Flag | Description
 startingUrl | product page to scrape reviews from
 pages | number of pages of reviews to scrape
 filter | review list filter
+reviewSelector | CSS selector for product reviews
 
 ## Test Suite
 All tests are located in `/test`. The folder structure should match that of `/src`. For example the scraper module is located in `/src/modules/scraper.js` and the test file is `/test/modules/scraper.spect.js`
