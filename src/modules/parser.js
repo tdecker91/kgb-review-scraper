@@ -4,6 +4,7 @@
 
 const config = require('../config')
 const cheerio = require('cheerio')
+const Review = require('../models/review')
 
 /**
  * 
@@ -26,7 +27,33 @@ function parseReviews(html) {
  * @param {Cheerio} reviewSelection 
  */
 function parseReview(reviewSelection) {
-  return {}
+  const $ = cheerio.load(reviewSelection)
+  let review = new Review()
+
+  review.rating = parseRating($('.dealership-rating .hidden-xs.rating-static'))
+
+  return review
+}
+
+/**
+ * Parse rating from given rating selection
+ * @param {Cheerio} ratingSelection 
+ * @returns {number} the given rating for the review
+ */
+function parseRating(ratingSelection) {
+  if (!ratingSelection || !ratingSelection[0]) {
+    return null
+  }
+
+  const ratingRegex = /rating-(\d+)/g
+  let classString = ratingSelection[0].attribs.class
+  let match = ratingRegex.exec(classString)
+
+  if(match && match[1]) {
+    return parseInt(match[1])
+  }
+
+  return null
 }
 
 module.exports = {
