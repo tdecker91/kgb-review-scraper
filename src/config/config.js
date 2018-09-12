@@ -2,12 +2,6 @@
  * @module config
  */
 
-let startingUrl
-let pages
-let filter
-let reviewSelector
-let top
-
 /**
  * app configuration
  */
@@ -25,21 +19,21 @@ module.exports = {
   /**
    * Product page to scraper will start on
    */
-  startingUrl: startingUrl,
+  startingUrl: null,
   /**
    * Number of review list pages the scraper will parse through
    */
-  pages: pages,
+  pages: null,
   /**
    * Review filter
    */
-  filter: filter,
+  filter: null,
   /**
    * CSS selector for product reviews
    */
-  reviewSelector: reviewSelector,
+  reviewSelector: null,
   /**
    * number of top reviews to find.
    */
-  top: top
+  top: null
 }
